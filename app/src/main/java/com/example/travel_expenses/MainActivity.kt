@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     R.id.jpy -> {
                         text = "¥"
+                        ret("jpy")
                     }
                 }
                 model.set_money(exchange, text)
@@ -70,7 +71,13 @@ class MainActivity : AppCompatActivity() {
             override fun onResponse(call: Call<apiresponse>, response: Response<apiresponse>) {
                 println("response = " + response.body())
                 println("성공")
-                model.set_change(response.body()!!.usd)
+                if(countury == "usd"){
+                    response.body()!!.usd?.let { model.set_change(it) }
+                }
+                else if(countury == "jpy"){
+                    response.body()!!.jpy?.let { model.set_change(it) }
+                }
+
             }
         })
     }
