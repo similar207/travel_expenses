@@ -19,12 +19,23 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="36dp" />
-        <EditText
-            android:id="@+id/edittext1"
-            android:hint="통화 종류"
-            android:layout_width="200dp"
+        <RadioGroup
+            android:id="@+id/rg"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp">
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/usd"
+                android:text="USD"/>
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/jpy"
+                android:text="JPY"/>
+
+        </RadioGroup>
     </LinearLayout>
 
     <LinearLayout
